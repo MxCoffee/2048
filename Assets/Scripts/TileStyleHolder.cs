@@ -5,14 +5,15 @@ using System.Collections;
 public class Tiles
 {
 	public int Number;
-	public Sprite tile;
+	public Color32 TileColor;
+	public Color32 TextColor;
 
 }
 
 
-public class TileNumbers : MonoBehaviour {
+public class TileStyleHolder : MonoBehaviour {
 
-	public static TileNumbers instance;
+	public static TileStyleHolder instance;
 
 	public Tiles[] TilesNum;
 
