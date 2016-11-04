@@ -7,6 +7,7 @@ public class Tiles
 	public int Number;
 	public Color32 TileColor;
 	public Color32 TextColor;
+	public Sprite tile;
 
 }
 

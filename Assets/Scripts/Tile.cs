@@ -6,6 +6,7 @@ public class Tile : MonoBehaviour {
 
 	public int indRow;
 	public int indCol;
+	public Sprite newSprite;
 
 	public bool mergedThisTurn = false;
 
@@ -32,11 +33,14 @@ public class Tile : MonoBehaviour {
 
 	private Text TileText;
 	private Image TileImg;
+	//private Sprite sprite;
 
 	void Awake()
 	{
 		TileText = GetComponentInChildren<Text> ();
 		TileImg = transform.Find("NumberCell").GetComponent<Image>();
+
+		//sprite = transform.Find ("NumberCell").GetComponent<Image> ().sprite;
 
 	}
 
@@ -45,6 +49,8 @@ public class Tile : MonoBehaviour {
 		TileText.text = TileStyleHolder.instance.TilesNum [index].Number.ToString();
 		TileText.color = TileStyleHolder.instance.TilesNum [index].TextColor;
 		TileImg.color = TileStyleHolder.instance.TilesNum [index].TileColor;
+		TileImg.sprite = TileStyleHolder.instance.TilesNum [index].tile;
+		//sprite = TileStyleHolder.instance.TilesNum [index].tile;
 	}
 	void ApplyStyle(int num)
 	{
@@ -94,12 +100,14 @@ public class Tile : MonoBehaviour {
 
 		TileText.enabled = true;
 		TileImg.enabled = true;
+		//sprite.hideFlags = HideFlags.None;
 	}
 	private void SetEmpty()
 	{
 		
 		TileText.enabled = false;
 		TileImg.enabled = false;
+		//sprite.hideFlags = HideFlags.HideInHierarchy;
 	}
 
 	// Use this for initialization

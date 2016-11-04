@@ -203,7 +203,7 @@ public class GameManager : MonoBehaviour {
 
 	public void Move(MoveDirection md)
 	{
-		Debug.Log (md.ToString() + " move.");
+		//Debug.Log (md.ToString() + " move.");
 		bool moveMade = false;
 		ResetMergedFlags ();
 		if (delay > 0) {
