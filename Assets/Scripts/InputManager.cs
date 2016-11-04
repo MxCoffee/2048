@@ -22,18 +22,19 @@ public class InputManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.RightArrow)) {
-			gm.Move (MoveDirection.Right);
+		if (gm.State == GameState.Playing) {
+			if (Input.GetKeyDown (KeyCode.RightArrow)) {
+				gm.Move (MoveDirection.Right);
+			}
+			if (Input.GetKeyDown (KeyCode.LeftArrow)) {
+				gm.Move (MoveDirection.Left);
+			}
+			if (Input.GetKeyDown (KeyCode.UpArrow)) {
+				gm.Move (MoveDirection.Up);
+			}
+			if (Input.GetKeyDown (KeyCode.DownArrow)) {
+				gm.Move (MoveDirection.Down);
+			}
 		}
-		if (Input.GetKeyDown (KeyCode.LeftArrow)) {
-			gm.Move (MoveDirection.Left);
-		}
-		if (Input.GetKeyDown (KeyCode.UpArrow)) {
-			gm.Move (MoveDirection.Up);
-		}
-		if (Input.GetKeyDown (KeyCode.DownArrow)) {
-			gm.Move (MoveDirection.Down);
-		}
-	
 	}
 }
